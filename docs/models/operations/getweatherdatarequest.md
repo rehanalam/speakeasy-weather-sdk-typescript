@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetWeatherDataRequest } from "speakeasy-weather/models/operations";
+import { GetWeatherDataRequest } from "speakeasy-weather-package/models/operations";
 
 let value: GetWeatherDataRequest = {
   lat: 4301.29,

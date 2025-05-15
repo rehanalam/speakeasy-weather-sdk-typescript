@@ -8,6 +8,9 @@ sources:
             - location: .speakeasy/speakeasy-modifications-overlay.yaml
         transformations:
             - removeUnused: true
+            - removeUnused: true
+            - removeUnused: true
+            - removeUnused: true
         registry:
             location: registry.speakeasyapi.dev/rehan-co/petstore/open-weather-map-one-call-api
 targets:

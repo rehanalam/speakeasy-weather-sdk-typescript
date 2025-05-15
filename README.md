@@ -17,37 +17,26 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 <!-- Start Summary [summary] -->
 ## Summary
 
-OpenWeatherMap One Call API hello: Provides access to current weather, hourly forecast, and daily forecast data.
+OpenWeatherMap One Call API hello 2: Provides access to current weather, hourly forecast, and daily forecast data.
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-- [speakeasy-weather](#speakeasy-weather)
-  - [Summary](#summary)
-  - [Table of Contents](#table-of-contents)
-  - [SDK Installation](#sdk-installation)
-    - [NPM](#npm)
-    - [PNPM](#pnpm)
-    - [Bun](#bun)
-    - [Yarn](#yarn)
-    - [Model Context Protocol (MCP) Server](#model-context-protocol-mcp-server)
-  - [Requirements](#requirements)
-  - [SDK Example Usage](#sdk-example-usage)
-    - [Example](#example)
-  - [Available Resources and Operations](#available-resources-and-operations)
-    - [weathers](#weathers)
-  - [Standalone functions](#standalone-functions)
-  - [Retries](#retries)
-  - [Error Handling](#error-handling)
-  - [Server Selection](#server-selection)
-    - [Override Server URL Per-Client](#override-server-url-per-client)
-  - [Custom HTTP Client](#custom-http-client)
-  - [Debugging](#debugging)
-- [Development](#development)
-  - [Maturity](#maturity)
-  - [Contributions](#contributions)
-    - [SDK Created by Speakeasy](#sdk-created-by-speakeasy)
+* [speakeasy-weather](#speakeasy-weather)
+  * [SDK Installation](#sdk-installation)
+  * [Requirements](#requirements)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Standalone functions](#standalone-functions)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Debugging](#debugging)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
 
 <!-- End Table of Contents [toc] -->
 
@@ -106,10 +95,10 @@ Add the following server definition to your `claude_desktop_config.json` file:
 ```json
 {
   "mcpServers": {
-    "SpeakeasyWeatherSDK": {
+    "SpeakeasyWeatherSdk1": {
       "command": "npx",
       "args": [
-        "-y", "--package", "speakeasy-weather",
+        "-y", "--package", "speakeasy-weather-package",
         "--",
         "mcp", "start"
       ]
@@ -128,10 +117,10 @@ Create a `.cursor/mcp.json` file in your project root with the following content
 ```json
 {
   "mcpServers": {
-    "SpeakeasyWeatherSDK": {
+    "SpeakeasyWeatherSdk1": {
       "command": "npx",
       "args": [
-        "-y", "--package", "speakeasy-weather",
+        "-y", "--package", "speakeasy-weather-package",
         "--",
         "mcp", "start"
       ]
@@ -169,7 +158,7 @@ If the repo is a private repo you must add your Github PAT to download a release
 For a full list of server arguments, run:
 
 ```sh
-npx -y --package speakeasy-weather -- mcp start --help
+npx -y --package speakeasy-weather-package -- mcp start --help
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -185,12 +174,12 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1();
 
 async function run() {
-  const result = await speakeasyWeatherSDK.weathers.get({
+  const result = await speakeasyWeatherSdk1.weathers.get({
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",
@@ -246,12 +235,12 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1();
 
 async function run() {
-  const result = await speakeasyWeatherSDK.weathers.get({
+  const result = await speakeasyWeatherSdk1.weathers.get({
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",
@@ -278,9 +267,9 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK({
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1({
   retryConfig: {
     strategy: "backoff",
     backoff: {
@@ -294,7 +283,7 @@ const speakeasyWeatherSDK = new SpeakeasyWeatherSDK({
 });
 
 async function run() {
-  const result = await speakeasyWeatherSDK.weathers.get({
+  const result = await speakeasyWeatherSdk1.weathers.get({
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",
@@ -319,15 +308,15 @@ If the request fails due to, for example 4XX or 5XX status codes, it will throw 
 | errors.APIError | 4XX, 5XX    | \*/\*        |
 
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
-import { SDKValidationError } from "speakeasy-weather/models/errors";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
+import { SDKValidationError } from "speakeasy-weather-package/models/errors";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1();
 
 async function run() {
   let result;
   try {
-    result = await speakeasyWeatherSDK.weathers.get({
+    result = await speakeasyWeatherSdk1.weathers.get({
       lat: 8525.89,
       lon: 3247.8,
       appid: "<id>",
@@ -385,14 +374,14 @@ In some rare cases, the SDK can fail to get a response from the server or even m
 
 The default server can be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK({
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1({
   serverURL: "https://api.openweathermap.org",
 });
 
 async function run() {
-  const result = await speakeasyWeatherSDK.weathers.get({
+  const result = await speakeasyWeatherSdk1.weathers.get({
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",
@@ -425,8 +414,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
-import { HTTPClient } from "speakeasy-weather/lib/http";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
+import { HTTPClient } from "speakeasy-weather-package/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -452,7 +441,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new SpeakeasyWeatherSDK({ httpClient });
+const sdk = new SpeakeasyWeatherSdk1({ httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -467,9 +456,9 @@ You can pass a logger that matches `console`'s interface as an SDK option.
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
 
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const sdk = new SpeakeasyWeatherSDK({ debugLogger: console });
+const sdk = new SpeakeasyWeatherSdk1({ debugLogger: console });
 ```
 
 You can also enable a default debug logger by setting an environment variable `SPEAKEASYWEATHERSDK_DEBUG` to true.

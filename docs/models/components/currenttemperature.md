@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CurrentTemperature } from "speakeasy-weather/models/components";
+import { CurrentTemperature } from "speakeasy-weather-package/models/components";
 
 let value: CurrentTemperature = {};
 ```

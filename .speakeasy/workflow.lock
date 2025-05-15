@@ -14,7 +14,7 @@ targets:
         sourceRevisionDigest: sha256:c9e066b3de0a56692dcf1710d18b3b35a176045019fc076ceac678b308531fc2
         sourceBlobDigest: sha256:0be144bb6db8dff1a81c0de3836fc728f8a5b72dd05947c943a0dc03077d12dc
         codeSamplesNamespace: open-weather-map-one-call-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:426cb3b57008b0b0583b5714f842bbfbb30890785b914e1d99b211d46b828ed6
+        codeSamplesRevisionDigest: sha256:a216099ff56dcbc6c3695d8c0f78c407c1fabe7ba0c2bf466f61d890839e5c37
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -25,6 +25,9 @@ workflow:
             overlays:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
             transformations:
+                - removeUnused: true
+                - removeUnused: true
+                - removeUnused: true
                 - removeUnused: true
             registry:
                 location: registry.speakeasyapi.dev/rehan-co/petstore/open-weather-map-one-call-api

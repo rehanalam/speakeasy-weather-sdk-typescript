@@ -3,7 +3,7 @@
  */
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { SpeakeasyWeatherSDKCore } from "../core.js";
+import { SpeakeasyWeatherSdk1Core } from "../core.js";
 import { SDKOptions } from "../lib/config.js";
 import type { ConsoleLogger } from "./console-logger.js";
 import { createRegisterPrompt } from "./prompts.js";
@@ -23,11 +23,11 @@ export function createMCPServer(deps: {
   serverIdx?: SDKOptions["serverIdx"] | undefined;
 }) {
   const server = new McpServer({
-    name: "SpeakeasyWeatherSDK",
-    version: "0.1.0",
+    name: "SpeakeasyWeatherSdk1",
+    version: "0.1.5",
   });
 
-  const client = new SpeakeasyWeatherSDKCore({
+  const client = new SpeakeasyWeatherSdk1Core({
     serverURL: deps.serverURL,
     serverIdx: deps.serverIdx,
   });

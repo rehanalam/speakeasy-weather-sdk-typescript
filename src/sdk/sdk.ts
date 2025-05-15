@@ -5,7 +5,7 @@
 import { ClientSDK } from "../lib/sdks.js";
 import { Weathers } from "./weathers.js";
 
-export class SpeakeasyWeatherSDK extends ClientSDK {
+export class SpeakeasyWeatherSdk1 extends ClientSDK {
   private _weathers?: Weathers;
   get weathers(): Weathers {
     return (this._weathers ??= new Weathers(this._options));

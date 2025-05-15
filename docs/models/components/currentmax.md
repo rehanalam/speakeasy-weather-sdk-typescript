@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CurrentMax } from "speakeasy-weather/models/components";
+import { CurrentMax } from "speakeasy-weather-package/models/components";
 
 let value: CurrentMax = {};
 ```

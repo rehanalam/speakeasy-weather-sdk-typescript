@@ -2,11 +2,11 @@ overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
   title: Speakeasy Modifications
-  version: 0.0.1
+  version: 0.0.6
   x-speakeasy-metadata:
-    type: speakeasy-modifications
-    before: ""
     after: ""
+    before: ""
+    type: speakeasy-modifications
 actions:
   - target: $["paths"]["/data/2.5/weather"]["get"]
     update:
@@ -16,4 +16,44 @@ actions:
       after: sdk.weathers.get()
       before: sdk.<no_group>.getWeatherData()
       created_at: 1747288241694
+      reviewed_at: 1747291928091
       type: method-name
+  - target: $
+    update:
+      x-speakeasy-retries:
+        strategy: backoff
+        backoff:
+          initialInterval: 500ms
+          maxInterval: 60s
+          maxElapsedTime: 5m
+        retryConnectionErrors: true
+        statusCodes:
+          - 500
+          - 502
+          - 503
+          - 504
+    x-speakeasy-metadata:
+      created_at: 1747294032629
+      type: user-edit
+  - target: $
+    update:
+      retries:
+        strategy: backoff
+        backoff:
+          initialInterval: 500ms
+          maxInterval: 60s
+          maxElapsedTime: 5m
+        retryConnectionErrors: true
+        statusCodes:
+          - 500
+          - 502
+          - 503
+          - 504
+    x-speakeasy-metadata:
+      created_at: 1747294294018
+      type: user-edit
+  - target: $["x-speakeasy-retries"]
+    remove: true
+    x-speakeasy-metadata:
+      created_at: 1747294294018
+      type: user-edit

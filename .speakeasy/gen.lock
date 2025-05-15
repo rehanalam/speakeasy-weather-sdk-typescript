@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 97898700-3236-405d-ab90-66de64ebde49
 management:
-  docChecksum: 84e25e392bd9807f4302c2559f9a4fc3
+  docChecksum: bb96830c6d34e9ec2cd6821590f2fa26
   docVersion: v1.0.0
   speakeasyVersion: 1.545.0
   generationVersion: 2.599.0
-  releaseVersion: 0.1.0
-  configChecksum: 60f54ddd21e9a933aa11207b6faac70b
+  releaseVersion: 0.1.5
+  configChecksum: f827c3d06f3937f55e7e2b5dd81ee63f
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -58,7 +58,7 @@ generatedFiles:
   - docs/models/components/hourlywind.md
   - docs/models/components/weatherresponse.md
   - docs/models/operations/getweatherdatarequest.md
-  - docs/sdks/speakeasyweathersdk/README.md
+  - docs/sdks/speakeasyweathersdk1/README.md
   - docs/sdks/weathers/README.md
   - docs/types/rfcdate.md
   - eslint.config.mjs

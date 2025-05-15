@@ -1,11 +1,11 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1();
 
 async function run() {
-  const result = await speakeasyWeatherSDK.weathers.get({
+  const result = await speakeasyWeatherSdk1.weathers.get({
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",

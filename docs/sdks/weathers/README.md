@@ -14,12 +14,12 @@ Retrieve current weather, hourly forecast, and daily forecast based on latitude 
 ### Example Usage
 
 ```typescript
-import { SpeakeasyWeatherSDK } from "speakeasy-weather";
+import { SpeakeasyWeatherSdk1 } from "speakeasy-weather-package";
 
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDK();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1();
 
 async function run() {
-  const result = await speakeasyWeatherSDK.weathers.get({
+  const result = await speakeasyWeatherSdk1.weathers.get({
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",
@@ -37,15 +37,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SpeakeasyWeatherSDKCore } from "speakeasy-weather/core.js";
-import { weathersGet } from "speakeasy-weather/funcs/weathersGet.js";
+import { SpeakeasyWeatherSdk1Core } from "speakeasy-weather-package/core.js";
+import { weathersGet } from "speakeasy-weather-package/funcs/weathersGet.js";
 
-// Use `SpeakeasyWeatherSDKCore` for best tree-shaking performance.
+// Use `SpeakeasyWeatherSdk1Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDKCore();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1Core();
 
 async function run() {
-  const res = await weathersGet(speakeasyWeatherSDK, {
+  const res = await weathersGet(speakeasyWeatherSdk1, {
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",

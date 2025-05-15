@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DailyHumidity } from "speakeasy-weather/models/components";
+import { DailyHumidity } from "speakeasy-weather-package/models/components";
 
 let value: DailyHumidity = {};
 ```

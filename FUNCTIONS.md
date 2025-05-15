@@ -19,16 +19,16 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { SpeakeasyWeatherSDKCore } from "speakeasy-weather/core.js";
-import { weathersGet } from "speakeasy-weather/funcs/weathersGet.js";
-import { SDKValidationError } from "speakeasy-weather/models/errors/sdkvalidationerror.js";
+import { SpeakeasyWeatherSdk1Core } from "speakeasy-weather-package/core.js";
+import { weathersGet } from "speakeasy-weather-package/funcs/weathersGet.js";
+import { SDKValidationError } from "speakeasy-weather-package/models/errors/sdkvalidationerror.js";
 
-// Use `SpeakeasyWeatherSDKCore` for best tree-shaking performance.
+// Use `SpeakeasyWeatherSdk1Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const speakeasyWeatherSDK = new SpeakeasyWeatherSDKCore();
+const speakeasyWeatherSdk1 = new SpeakeasyWeatherSdk1Core();
 
 async function run() {
-  const res = await weathersGet(speakeasyWeatherSDK, {
+  const res = await weathersGet(speakeasyWeatherSdk1, {
     lat: 8525.89,
     lon: 3247.8,
     appid: "<id>",

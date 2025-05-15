@@ -1,0 +1,136 @@
+lockVersion: 2.0.0
+id: 97898700-3236-405d-ab90-66de64ebde49
+management:
+  docChecksum: 84e25e392bd9807f4302c2559f9a4fc3
+  docVersion: v1.0.0
+  speakeasyVersion: 1.545.0
+  generationVersion: 2.599.0
+  releaseVersion: 0.1.0
+  configChecksum: 60f54ddd21e9a933aa11207b6faac70b
+features:
+  typescript:
+    additionalDependencies: 0.1.0
+    core: 3.21.7
+    defaultEnabledRetries: 0.1.0
+    devContainers: 2.90.0
+    envVarSecurityUsage: 0.1.2
+    globalSecurityCallbacks: 0.1.0
+    globalServerURLs: 2.82.5
+    groups: 2.81.2
+    mcpServer: 0.9.2
+    nameOverrides: 2.81.2
+    responseFormat: 0.2.3
+    retries: 2.83.0
+    sdkHooks: 0.2.0
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .npmignore
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/current.md
+  - docs/models/components/currentcloudcover.md
+  - docs/models/components/currenthumidity.md
+  - docs/models/components/currentmax.md
+  - docs/models/components/currentprecipitation.md
+  - docs/models/components/currentpressure.md
+  - docs/models/components/currenttemperature.md
+  - docs/models/components/currentwind.md
+  - docs/models/components/daily.md
+  - docs/models/components/dailycloudcover.md
+  - docs/models/components/dailyhumidity.md
+  - docs/models/components/dailymax.md
+  - docs/models/components/dailyprecipitation.md
+  - docs/models/components/dailypressure.md
+  - docs/models/components/dailytemperature.md
+  - docs/models/components/dailywind.md
+  - docs/models/components/hourly.md
+  - docs/models/components/hourlycloudcover.md
+  - docs/models/components/hourlyhumidity.md
+  - docs/models/components/hourlymax.md
+  - docs/models/components/hourlyprecipitation.md
+  - docs/models/components/hourlypressure.md
+  - docs/models/components/hourlytemperature.md
+  - docs/models/components/hourlywind.md
+  - docs/models/components/weatherresponse.md
+  - docs/models/operations/getweatherdatarequest.md
+  - docs/sdks/speakeasyweathersdk/README.md
+  - docs/sdks/weathers/README.md
+  - docs/types/rfcdate.md
+  - eslint.config.mjs
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/weathersGet.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/env.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/mcp-server/build.mts
+  - src/mcp-server/cli.ts
+  - src/mcp-server/cli/start/command.ts
+  - src/mcp-server/cli/start/impl.ts
+  - src/mcp-server/console-logger.ts
+  - src/mcp-server/extensions.ts
+  - src/mcp-server/mcp-server.ts
+  - src/mcp-server/prompts.ts
+  - src/mcp-server/resources.ts
+  - src/mcp-server/scopes.ts
+  - src/mcp-server/server.ts
+  - src/mcp-server/shared.ts
+  - src/mcp-server/tools.ts
+  - src/mcp-server/tools/weathersGet.ts
+  - src/models/components/index.ts
+  - src/models/components/weatherresponse.ts
+  - src/models/errors/apierror.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/getweatherdata.ts
+  - src/models/operations/index.ts
+  - src/sdk/index.ts
+  - src/sdk/sdk.ts
+  - src/sdk/weathers.ts
+  - src/types/async.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  getWeatherData:
+    speakeasy-default-get-weather-data:
+      parameters:
+        query:
+          lat: 8525.89
+          lon: 3247.8
+          appid: "<id>"
+      responses:
+        "200":
+          application/json: {}
+examplesVersion: 1.0.1
+generatedTests: {}

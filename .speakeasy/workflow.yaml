@@ -1,0 +1,22 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    OpenWeatherMap One Call API:
+        inputs:
+            - location: ../api-spec/openweatherAPI.json
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        transformations:
+            - removeUnused: true
+        registry:
+            location: registry.speakeasyapi.dev/rehan-co/petstore/open-weather-map-one-call-api
+targets:
+    speakeasy-weather-sdk:
+        target: typescript
+        source: OpenWeatherMap One Call API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/rehan-co/petstore/open-weather-map-one-call-api-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false

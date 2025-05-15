@@ -1,0 +1,19 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.1
+  x-speakeasy-metadata:
+    type: speakeasy-modifications
+    before: ""
+    after: ""
+actions:
+  - target: $["paths"]["/data/2.5/weather"]["get"]
+    update:
+      x-speakeasy-group: weathers
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.weathers.get()
+      before: sdk.<no_group>.getWeatherData()
+      created_at: 1747288241694
+      type: method-name
